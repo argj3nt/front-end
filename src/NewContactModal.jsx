@@ -1,8 +1,8 @@
 import React, { useRef } from 'react'
 import { Button, Form, Modal } from 'react-bootstrap'
-
+//deleted Modal.Body from the import statement
 const NewContactModal = ({ closeModal }) => {
-  const nameRef = useRef();
+  const nameRef = useRef(); //added nameRef to handle the name input
   
   function  handleSubmit(e) {
     e.preventDefault()
