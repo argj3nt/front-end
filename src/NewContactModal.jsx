@@ -1,29 +1,27 @@
 import React, { useRef } from 'react'
-import { Form, Modal, ModalBody } from 'react-bootstrap'
+import { Button, Form, Modal } from 'react-bootstrap'
 
 const NewContactModal = ({ closeModal }) => {
+  const nameRef = useRef();
+  
   function  handleSubmit(e) {
     e.preventDefault()
   }
 
   return (
     <>
-    <Modal.Header closeButton>
-      Create Contacts
-    </Modal.Header>
-    <Modal.Body>
-      <Form onSubmit={handleSubmit}></Form>
-      <Form.Group>
-        <Form.Label>Id</Form.Label>
-        <Form.Control type='text' ref={idRef} required />
-      </Form.Group>
-      <Form.Group>
-        <Form.Label>Name</Form.Label>
-        <Form.Control type='Name' ref={idRef} required />
-      </Form.Group>
-    </Modal.Body>
+      <Modal.Header closeButton>Create Contacts</Modal.Header>
+      <Modal.Body>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group>
+            <Form.Label>Name</Form.Label>
+            <Form.Control type="Name" ref={nameRef} required />
+          </Form.Group>
+          <Button type='submit'>create</Button>
+        </Form>
+      </Modal.Body>
     </>
-  )
+  );
 }
 
 export default NewContactModal
